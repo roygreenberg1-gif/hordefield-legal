@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ZomBlitz — Join a friend</title>
+<!-- Invite friends' link page (decision 670). Shows the friend's code, copies it, and sends the phone to its store: Google
+     Play with the code in the install referrer (the game reads it by itself), the App Store after copying the code (the
+     game's PASTE CODE takes it). Adapted from Hordelane's invite.html (read and copied only). Stores and sends nothing. -->
+<style>
+  :root { color-scheme: light dark; --ink:#1b1b1b; --bg:#ffffff; --muted:#6b6b6b; --panel:#f3f1f7; --edge:#ddd8e6;
+          --accent:#5b3fb0; --on-accent:#ffffff; --plate:#fff6e0; --plate-ink:#24261f; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#e8e8e8; --bg:#121212; --muted:#a0a0a0; --panel:#1e1b24; --edge:#33303b;
+            --accent:#b49cff; --on-accent:#121212; }
+  }
+  body { font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         max-width: 30rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; background: var(--bg); color: var(--ink); }
+  main { display: grid; gap: 1.25rem; }
+  h1 { font-size: 1.75rem; margin: 0; text-wrap: balance; }
+  h2 { font-size: 1.05rem; margin: 1rem 0 0; }
+  p { margin: 0; }
+  .sub { color: var(--muted); margin: -.75rem 0 .25rem; }
+  .code { background: var(--panel); border: 1px solid var(--edge); border-radius: 12px; padding: 1.25rem;
+          display: grid; gap: .75rem; justify-items: center; }
+  .label { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .plate { background: var(--plate); color: var(--plate-ink); border-radius: 10px; padding: .4rem 1.1rem;
+           font: 700 2.2rem/1.2 ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: .18em; user-select: all; }
+  button, a.store { font: inherit; font-weight: 700; cursor: pointer; border-radius: 10px; text-decoration: none; text-align: center; }
+  .copy { background: transparent; color: var(--accent); border: 1px solid var(--edge); padding: .45rem 1.1rem; }
+  a.store { display: block; padding: 1rem 1.25rem; background: var(--accent); color: var(--on-accent); border: 0; }
+  a.store small { display: block; font-weight: 400; opacity: .85; font-size: .85rem; }
+  a.store.second { background: var(--panel); color: var(--accent); border: 1px solid var(--edge); }
+  .copy:focus-visible, a.store:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ol, ul { margin: 0; padding-inline-start: 1.25rem; color: var(--muted); }
+  li { margin-bottom: .35rem; }
+  .about { color: var(--muted); font-size: .95rem; display: grid; gap: .75rem; }
+  footer { margin-top: 1rem; color: var(--muted); font-size: .875rem; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Join your friend in ZomBlitz</h1>
+  <p class="sub">ZomBlitz: Gun Heroes — the zombie arena shooter</p>
+
+  <section class="code" id="code-box" hidden>
+    <span class="label">Your friend's code</span>
+    <span class="plate" id="code"></span>
+    <span class="label" id="room-line" hidden>Team room <strong id="room"></strong></span>
+    <button class="copy" id="copy" type="button">Copy code</button>
+  </section>
+
+  <a class="store" id="play" href="https://play.google.com/store/apps/details?id=com.greenberg.hordefield">
+    Get the game<small>Google Play</small></a>
+  <a class="store" id="apple" href="https://apps.apple.com/app/id6824234763">
+    Copy the code and get the game<small>App Store</small></a>
+
+  <ol id="steps-android" hidden>
+    <li>Install the game from Google Play.</li>
+    <li>Open it: your friend's code fills in by itself.</li>
+    <li>If it does not: tap <strong>ONLINE</strong>, then <strong>INVITE FRIENDS</strong>, then
+        <strong>PASTE CODE</strong>.</li>
+  </ol>
+  <ol id="steps-apple" hidden>
+    <li>The button above copies the code and opens the App Store.</li>
+    <li>Install the game and open it.</li>
+    <li>Tap <strong>ONLINE</strong>, then <strong>INVITE FRIENDS</strong>, then <strong>PASTE CODE</strong>.</li>
+  </ol>
+
+  <section class="about">
+    <h2>What the invite does</h2>
+    <p>
+      Your friend shared their six-character code with you. If you enter it in your first week, before you have won
+      stage 10, you join their game. When you win stage 5 you get a welcome gift in the game, and as you play on, your
+      friend may get in-game rewards too. Rewards come from playing, never from installing. A code can be entered once,
+      and never your own.
+    </p>
+    <h2>What data is involved</h2>
+    <ul>
+      <li><strong>This page</strong> stores nothing, sets no cookies and sends nothing of its own. On Android it passes
+          the code on to Google Play inside the store link; on iPhone it copies the code when you tap the button. It is
+          hosted on GitHub Pages, which, like any web host, receives the address asked for, code included, and your IP
+          address.</li>
+      <li><strong>In the game</strong>, joining adds a random identifier of an anonymous account the game creates for
+          you (no name, email or password) to your friend's code's record; winning stages 10 and 40 adds it once more
+          each. Anyone who knows the code can read that code's record.</li>
+      <li>On a phone the store reports as under 13, invites do not exist at all.</li>
+    </ul>
+    <p>The details are in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+  </section>
+
+  <footer>Published by Roy Greenberg · <a href="index.html">legal documents</a></footer>
+</main>
+<script>
+(function () {
+  // The game's codes: six of these, no I, O, 0 or 1 (Invites.CodeAlphabet, firestore.rules). Rooms: 4 letters or digits.
+  var params = new URLSearchParams(location.search);
+  var code = (params.get('c') || '').trim().toUpperCase();
+  if (!/^[A-HJ-NP-Z2-9]{6}$/.test(code)) code = '';
+  var room = (params.get('t') || '').trim().toUpperCase();
+  if (!/^[A-Z0-9]{4}$/.test(room)) room = '';
+
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  // iPadOS reports itself as a Mac; a touch screen tells it apart.
+  var apple = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+
+  var play = document.getElementById('play');
+  var store = document.getElementById('apple');
+  if (code) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('code-box').hidden = false;
+    play.href += '&referrer=' + encodeURIComponent('invite=' + code);
+  }
+  if (room) {
+    document.getElementById('room').textContent = room;
+    document.getElementById('room-line').hidden = false;
+  }
+
+  var button = document.getElementById('copy');
+  function copy() {
+    if (!code) return Promise.resolve(false);
+    var done = function () { button.textContent = 'Copied'; return true; };
+    var by_hand = function () {
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById('code'));
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      button.textContent = 'Press and hold the code to copy it';
+      return false;
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText)
+      return navigator.clipboard.writeText(code).then(done, by_hand);
+    return Promise.resolve(by_hand());
+  }
+  button.addEventListener('click', copy);
+
+  if (android) {
+    store.hidden = true;
+    document.getElementById('steps-android').hidden = !code;
+    play.addEventListener('click', function () { copy(); });
+    // On to Play at once; the button stays for a browser that stops the jump.
+    if (code) location.replace(play.href);
+  } else if (apple) {
+    play.hidden = true;
+    document.getElementById('steps-apple').hidden = !code;
+    // The clipboard needs the tap itself: copy first, then the App Store.
+    store.addEventListener('click', function (e) {
+      if (!code) return;
+      e.preventDefault();
+      var go = function () { location.href = store.href; };
+      copy().then(go, go);
+    });
+  } else {
+    play.classList.add('second');
+    store.classList.add('second');
+    document.getElementById('steps-android').hidden = !code;
+  }
+})();
+</script>
+</body>
+</html>

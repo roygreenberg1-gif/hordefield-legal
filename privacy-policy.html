@@ -23,7 +23,7 @@
 <body>
 
 <h1>Privacy Policy for ZomBlitz</h1>
-<p class="meta">Last updated: 6 November 2026</p>
+<p class="meta">Last updated: 9 November 2026</p>
 
 <p>
   ZomBlitz: Gun Heroes ("ZomBlitz", "the game") is developed and published by Roy Greenberg.
@@ -33,23 +33,30 @@
 
 <h2>The short version</h2>
 <p>
-  The game has no account of its own and no advertising, and does not sell or share personal information.
+  The game has no account of its own and does not sell or share personal information.
   On Android you may sign in to Google Play Games, but you do not have to.
   It sends game statistics and crash reports to Google's Firebase service so we can find what is hard
   and fix what breaks: on Android, basic game counts and crash reports always, and detailed statistics
   only if you agree; on iPhone, nothing unless you agree. Your progress stays on your device, and on Android
   it is also backed up to your Google Play Games account if you sign in to it. TEAM mode
-  connects you with friends through the Photon multiplayer service.
+  and Quick Match connect you with other players through the Photon multiplayer service.
+  On Android, the game offers optional reward videos from Google AdMob, always non-personalised, and sells
+  in-game items through Google Play; our server checks each purchase with Google Play before it is delivered.
+  The game gives each installation a random, anonymous sign-in with Google's Firebase service, used to check
+  purchases and for INVITE FRIENDS.
 </p>
 
 <h2>What the game does not collect</h2>
 <ul>
   <li>No name, phone number or account of any kind (an email address only if you write to us).</li>
+  <li>No payment details: Google Play handles payment, and we never receive your card, your name or your email address
+    from it.</li>
   <li>No precise location. Firebase works out a rough area (country or city) from the connection's IP
     address; the address itself is masked and not kept.</li>
   <li>No contacts, photos, camera, microphone or files.</li>
-  <li>Advertising ID: the game does not collect it. Firebase's collection of it is switched off and the game
-    shows no ads, although the Android permission for it is present.</li>
+  <li>Advertising ID: the game itself does not collect it, and Firebase's collection of it is switched off. On Android,
+    Google AdMob, which serves the reward videos, may read it on your phone when a video is requested, as described
+    below. You can reset or delete it in your phone's settings.</li>
 </ul>
 
 <h2>Game statistics and crash reports (Firebase)</h2>
@@ -59,7 +66,9 @@
 </p>
 <ul>
   <li><strong>What is sent:</strong> game events such as a stage started or ended and how it went, coins and
-    diamonds earned and spent, and on Android whether a reward video or a purchase went through; crash reports (what the
+    diamonds earned and spent and what they were spent on, heroes, weapons and other items received, and on Android
+    whether a reward video or a purchase went through (for a purchase, which item and its price; for a video, the
+    amount Google AdMob reports it earned us); crash reports (what the
     game was doing when it stopped, the phone model and system version); general facts sent with every
     event (phone model, system version, language, game version, when the game was first opened, and how
     many times it has been played); and an installation identifier that Firebase creates for this copy of
@@ -85,15 +94,75 @@
   equal protection as this policy.
 </p>
 
+<h2>Reward videos (Google AdMob, Android)</h2>
+<p>
+  On Android, the game offers optional reward videos (for example, a revive or extra coins). A video is requested only
+  for an offer on screen, and plays only when you tap to watch it. The videos are served by Google AdMob, a service of
+  Google. Every request asks for <strong>non-personalised</strong> advertising: the advertisements are not chosen from
+  your interests or your activity in other apps, and the content is limited to a PG rating. To serve a video, count
+  it, limit how often the same one is shown and prevent fraud, AdMob receives from your phone your device's IP
+  address, the phone's model, system and language, the game's identity, how you interact with the advertisement and,
+  on Android, the advertising ID. Google handles this data under its own policy:
+  <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.
+  The game sends AdMob nothing else about you. Players under 13 are not offered videos (see Children).
+  This version of the game on iPhone has no reward videos.
+</p>
+
+<h2>Purchases (Google Play, and our check)</h2>
+<p>
+  On Android, purchases are made through Google Play, which handles the payment under its own privacy policy. We do
+  not receive your payment details, name or email address; Google Play gives us an order number for each purchase.
+  This version of the game on iPhone has no purchases.
+</p>
+<p>
+  So that each purchase is real and delivered once, the game sends our server the purchase's details from Google
+  Play: the product bought, the game's package name and Google's purchase token (a code for this one purchase),
+  together with the game's anonymous sign-in described below. The server asks Google Play to confirm the purchase and
+  keeps a record of it: the anonymous sign-in's random id, the product, Google's order number, the time of purchase and
+  whether it was a test purchase, filed under a one-way code made from the purchase token. It does not keep the token
+  itself.
+</p>
+<p>
+  Refunds: once a day our server reads Google Play's list of refunded or cancelled purchases and records, for each one
+  it had delivered, the same random id, the product, Google's order number and when and why it was cancelled. When the
+  game starts it asks the server whether any of its own purchases was refunded, sending only the one-way codes of the
+  purchases in its save, and removes what a refunded purchase gave.
+</p>
+<p>
+  The server runs on Google Cloud (Cloud Run functions and Cloud Firestore, in the United States) for us. These
+  purchase and refund records are kept for 3 years from when they are made, to stop a purchase being used twice, to
+  handle refunds and to meet tax and accounting obligations, and are then deleted automatically.
+</p>
+
+<h2>The anonymous sign-in (Firebase Authentication)</h2>
+<p>
+  To check purchases and to run INVITE FRIENDS, the game signs this installation in to Firebase Authentication, a
+  service of Google, anonymously: Firebase creates a random id for the installation and nothing else is given to it -
+  no name, email, phone number or account. The id stays on this phone; a new phone or a reinstall gets a new one.
+  This sign-in is separate from the statistics question, because purchases and invites cannot work without it.
+  On Android, these requests also carry a Firebase App Check token: Google Play Integrity, on your phone, tells Google
+  that the request comes from this game as installed from Google Play on a genuine device, and the token carries only
+  that answer - no statistics, usage data or personal details.
+</p>
+
+<h2>Invite friends</h2>
+<p>
+  Each player has a six-letter invite code. When you share it, or enter a friend's code, the game stores in Cloud
+  Firestore (Google Cloud, for us): the code, the anonymous sign-in id of its owner, the anonymous ids of the players who
+  joined with it, and which of them have won stage 10 and stage 40, so both sides can be rewarded. The game does not show
+  this to other players, but a record is read by its code: anyone who knows a code can read that code's record (the random
+  ids in it, nothing else). On Android, if you install the game from a friend's invite link, the game reads the link's code from Google
+  Play's install referrer on your phone; only the code is kept. INVITE FRIENDS is not offered to players under 13.
+</p>
+
 <h2>Writing to us, and test builds</h2>
 <p>
   CONTACT US in Settings opens your own mail app with a message that includes the game's version, your
   phone's model and system, and your Player ID (a random code made by the game, not tied to your phone or
   any account). We receive it only if you send it, together with your email address. Support emails are
-  deleted when the issue is closed, or on request. Test builds can also
-  share a play log of your attempts, only when you press SEND TEST LOG and choose where to send it.
-  On Android, test builds also show TEST reward videos and TEST purchases: these are screens made by us, cost nothing,
-  and contact no advertising network or payment service.
+  deleted when the issue is closed, or on request. Test builds that we give to testers outside the stores can also
+  share a play log of your attempts, only when you press SEND TEST LOG and choose where to send it; the versions on
+  Google Play and the App Store do not have it.
 </p>
 
 <h2>Reminders</h2>
@@ -113,35 +182,53 @@
 
 <h2>Checking for a new version</h2>
 <p>
-  Once a day the game reads a small public file on this website, <code>version.json</code>, which says which version of the game is
-  the newest on each store, so it can tell you when an update is ready. The request carries nothing about you or your game. As with
+  The game reads a small public file on this website, <code>version.json</code>, which says which version of the game is
+  the newest on each store, so it can tell you when an update is ready. The same file can carry a short notice from us and
+  can switch a feature off for everyone if it breaks. When that file says there is new MAIL, the game also reads
+  <code>mail.json</code>, a public file with the studio's messages and gifts; a message meant for one player names them only by
+  a one-way code made from their Player ID, which the game checks on the phone. Gifts from inviting friends, leagues and
+  coming back are worked out by the game on the phone and shown in MAIL. These requests carry nothing about you or your game. As with
   any internet request, the website's host (GitHub) sees your device's IP address, under GitHub's own privacy policy. The game does
   not record or keep it.
 </p>
 
-<h2>Team mode (Photon)</h2>
+<h2>Team mode and Quick Match (Photon)</h2>
 <p>
   If you choose to play TEAM mode, the game connects to Photon, a multiplayer service run by Exit Games GmbH (Germany), to link
   your phone with your friends' phones. While you are in a room, Photon receives your device's IP address and the game data needed
-  to play together: the room code, your hero and weapon, where you move and shoot, your health and your kills. The other players in
+  to play together: the room code, your hero, its level and your weapon, where you move and shoot, your health and your kills. The other players in
   the room see your player name, your hero and how it plays. If you have signed in to Google Play Games in the game (Game
   Center on iPhone), your player name is that account's name; otherwise it is a name the game makes for you once, from
   letters and two digits. The game sends Photon no email or advertising ID. We use Photon only to
   connect the players; Photon handles this data under its own privacy policy:
   <a href="https://www.photonengine.com/privacy">https://www.photonengine.com/privacy</a>. Playing alone does not connect to Photon.
+  Game traffic in TEAM and Quick Match is not encrypted.
+</p>
+<p>
+  Quick Match puts you in a team with other players without a room code. The game measures which Photon region answers
+  fastest and searches there. To make teams of similar strength, it sends Photon your team size and a strength level worked
+  out from your hero's level and your weapon's tier. In Quick Match every player, you included, is shown only by a name the
+  game makes, never by a Google Play Games or Game Center name. In TEAM and Quick Match runs, players can talk only with a
+  fixed set of short phrases and markers built into the game, with no free text, and can give each other likes, which the
+  game counts. Photon passes these on
+  to the players in the run and the game does not keep them on any server. So that you can come back to a run after a short
+  drop in connection, the game sends the room a random key that it makes new each time the app starts. The key identifies
+  no one and is not kept after the app closes. As our Terms of Service say (section 7), in Quick Match computer-controlled
+  teammates may fill empty team seats, and in TEAM and Quick Match a computer-controlled teammate may carry on the hero of a
+  player who leaves the run, loses connection or is away.
 </p>
 
 <h2>Where your progress is stored</h2>
 <p>
-  Your progress, coins and settings are saved on your device, protected against editing. Uninstalling the
+  Your progress, coins, purchased items and settings are saved on your device, protected against editing. Uninstalling the
   game or clearing its data deletes them from the device.
 </p>
 <p>
   On Android, the game offers to sign in to Google Play Games when it starts. Signing in is optional: if you
   decline, you can connect later from CLOUD SAVE in the game's Settings. If you sign in, a copy of your progress
-  (stages, coins, diamonds, heroes and weapons, protected against editing, without your phone's details) is
-  saved to your Google Play Games account through Google's Saved Games service, so you can get it back on a
-  new phone or after reinstalling. Google keeps that copy under its own privacy policy; we cannot see it.
+  (stages, coins, diamonds, heroes and weapons, the record of purchases delivered, and which MAIL you have opened, claimed or deleted, protected against editing, without
+  your phone's details) is saved to your Google Play Games account through Google's Saved Games service, so you can get
+  it back on a new phone or after reinstalling. Google keeps that copy under its own privacy policy; we cannot see it.
   Your game settings on the phone, such as your answer to the statistics question, are not included.
   You can delete the copy and stop the backup in the Google Play Games app (your profile, then settings)
   or at <a href="https://myaccount.google.com">myaccount.google.com</a>. On iPhone there is no backup by the game.
@@ -149,31 +236,42 @@
 
 <h2>The app stores</h2>
 <p>
-  Google Play and the App Store handle the download and may collect information about it under their
-  own privacy policies. We receive only the aggregated, anonymous statistics the stores give every
-  developer (for example, how many people installed the game).
+  Google Play and the App Store handle the download, and Google Play handles payments, and they may collect information
+  about them under their own privacy policies. Apart from the purchase details described above, we receive only the
+  aggregated, anonymous statistics the stores give every developer (for example, how many people installed the game)
+  and the sales reports they give every seller.
 </p>
 
 <h2>Children</h2>
 <p>
   The game is meant for players aged 13 and over. It is not directed at children under 13 and is not
   part of Google Play's Families programme. If the app store tells the game that a player is under 13, the game
-  sends no statistics, offers no rewarded videos, sets no reminders and does not ask for a store rating; in TEAM
-  mode such a player is shown only by the name the game made. If you believe a child under 13 has sent us
-  information, write to us and we will delete it.
+  sends no statistics and no crash reports, offers no reward videos and no INVITE FRIENDS, sets no reminders and does
+  not ask for a store rating.
+</p>
+<p>
+  Such a player can still play TEAM and Quick Match. There, Photon receives their device's IP address and the game data
+  described under "Team mode and Quick Match" only to connect and run the match; we keep none of it. They can use only
+  the fixed phrases, markers and likes built into the game, never free text, and they are shown only by a name the game
+  makes, a new random one for every match, in Quick Match and in TEAM alike. On Android, the
+  anonymous sign-in and App Check described above still work for them, only so that a purchase a parent has approved can
+  be checked. If you believe a child under 13 has sent us information, write to us and we will delete it.
 </p>
 
 <h2>Your rights</h2>
 <p>
-  You can ask us to delete the statistics kept for your installation: write to the address below with
-  the Player ID shown in the game's Settings. Basic counts (Android's BASIC ONLY) carry no Player ID, so
-  they cannot be singled out for deletion; they are removed with the retention periods above. If you have
-  any other question about your privacy, write to us too.
+  You can ask us to delete the statistics kept for your installation: tap DELETE DATA in the game's Settings,
+  which writes the request for you, or write to the address below with the Player ID shown in the game's Settings. Basic counts (Android's BASIC ONLY) carry no Player ID, so
+  they cannot be singled out for deletion; they are removed with the retention periods above. Invite records can be
+  deleted on request too: include your invite code (YOUR CODE on the INVITE FRIENDS page), because invite records are
+  filed by code, not by Player ID. Purchase and refund records are kept for 3 years to prevent fraud, handle refunds and meet
+  legal obligations, as described above, and are then deleted automatically. If you have any other question about your privacy, write to us too.
 </p>
 
 <h2>Privacy laws in US states</h2>
 <p>
-  We do not sell or share personal information, and we do not use it for targeted advertising. If you live in a
+  We do not sell or share personal information, and we do not use it for targeted advertising: every reward video is
+  requested as non-personalised. If you live in a
   US state with a privacy law (for example California, Colorado, Connecticut, Virginia, Utah or Texas), you can ask
   us what we hold about your installation, and ask us to correct or delete it: write to the address below with the
   Player ID shown in the game's Settings. We answer within 45 days. If we turn down a request, you can ask us to
@@ -182,8 +280,8 @@
 
 <h2>Changes to this policy</h2>
 <p>
-  If the game changes what it does with information, for example by adding purchases, rewarded videos
-  or statistics, this policy is updated before that version is released, and the date above changes.
+  If the game changes what it does with information, for example by adding a new service or new statistics, this
+  policy is updated before that version is released, and the date above changes.
 </p>
 
 <h2>Contact</h2>
