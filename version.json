@@ -2,5 +2,21 @@
   "android_latest": 8,
   "android_min": 0,
   "ios_latest": "1.0",
-  "ios_min": ""
+  "ios_min": "",
+  "notice": {
+    "id": "",
+    "title": "",
+    "body": "",
+    "until": "",
+    "min_version_code": 0,
+    "max_version_code": 0
+  },
+  "kill": {
+    "ads": false,
+    "purchases": false,
+    "invites": false,
+    "cloudsave": false,
+    "online": false
+  },
+  "mail_rev": 1
 }
