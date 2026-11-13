@@ -23,7 +23,7 @@
 <body>
 
 <h1>Privacy Policy for ZomBlitz</h1>
-<p class="meta">Last updated: 9 November 2026</p>
+<p class="meta">Last updated: 13 November 2026</p>
 
 <p>
   ZomBlitz: Gun Heroes ("ZomBlitz", "the game") is developed and published by Roy Greenberg.
@@ -33,11 +33,14 @@
 
 <h2>The short version</h2>
 <p>
-  The game has no account of its own and does not sell or share personal information.
+  The game has no account of its own and does not sell personal information. If you are 18 or over and agree to statistics outside the
+  European Economic Area, the United Kingdom and Switzerland, they are also used to measure our advertising (below).
   On Android you may sign in to Google Play Games, but you do not have to.
   It sends game statistics and crash reports to Google's Firebase service so we can find what is hard
-  and fix what breaks: on Android, basic game counts and crash reports always, and detailed statistics
-  only if you agree; on iPhone, nothing unless you agree. Your progress stays on your device, and on Android
+  and fix what breaks: on Android, an anonymous "app opened" count from the first start (outside the European Economic
+  Area, the United Kingdom and Switzerland), basic game counts and crash reports once you answer the statistics question,
+  and detailed statistics only if you agree (once the game knows a player is under 13, no statistics at all; see Children); on iPhone,
+  nothing unless you agree. Your progress stays on your device, and on Android
   it is also backed up to your Google Play Games account if you sign in to it. TEAM mode
   and Quick Match connect you with other players through the Photon multiplayer service.
   On Android, the game offers optional reward videos from Google AdMob, always non-personalised, and sells
@@ -45,24 +48,43 @@
   The game gives each installation a random, anonymous sign-in with Google's Firebase service, used to check
   purchases and for INVITE FRIENDS.
 </p>
+<p>
+  Roy Greenberg, an individual developer in Israel, decides how this information is used (he is its "controller" under
+  Israel's Privacy Protection Law); you can reach him at the address at the end of this policy. You are not required by
+  law to give the game any information. If you answer NO THANKS, or switch statistics off later, the game works the same;
+  only what this policy says is always sent is sent (on iPhone, no statistics at all). TEAM mode, Quick Match, purchases and
+  INVITE FRIENDS need the information described in their sections in order to work, so if you do not want that
+  information used, do not use those features.
+</p>
 
 <h2>What the game does not collect</h2>
 <ul>
-  <li>No name, phone number or account of any kind (an email address only if you write to us).</li>
+  <li>No phone number, and we do not ask for your name (an email address only if you write to us). One exception: if you are
+    signed in to Google Play Games or Game Center, its display name, which can be your real name, is sent through Photon to
+    the other players in a TEAM room (joined with a room code), and only to them. Quick Match uses a gamer tag the game makes
+    for you (see "Team mode and Quick Match").</li>
   <li>No payment details: Google Play handles payment, and we never receive your card, your name or your email address
     from it.</li>
   <li>No precise location. Firebase works out a rough area (country or city) from the connection's IP
     address; the address itself is masked and not kept.</li>
   <li>No contacts, photos, camera, microphone or files.</li>
-  <li>Advertising ID: the game itself does not collect it, and Firebase's collection of it is switched off. On Android,
-    Google AdMob, which serves the reward videos, may read it on your phone when a video is requested, as described
-    below. You can reset or delete it in your phone's settings.</li>
+  <li>Advertising ID: on Android, if you answer "YES, COUNT ME IN" (or switch on DETAILED STATISTICS) and you are outside
+    the European Economic Area, the United Kingdom and Switzerland, and you are 18 or over (see "Your age"), Firebase reads it so that Google Ads can tell us which
+    of our advertisements brought you to the game and whether you went on to play (for example, won stage 1, 5 or 10). It
+    is not used to choose the advertisements you see. Otherwise Firebase does not read it. Google AdMob, which serves the
+    reward videos, may read it on your phone when a video is requested, as described below, except for a player under 13,
+    whose video requests are marked as child-directed, so Google does not use it (see Children). You can reset or delete it in
+    your phone's settings.</li>
 </ul>
 
 <h2>Game statistics and crash reports (Firebase)</h2>
 <p>
-  The game uses Firebase Analytics and Firebase Crashlytics, services of Google, for us. Nothing is sent
-  before you answer the statistics question that appears when you first start the game.
+  The game uses Firebase Analytics and Firebase Crashlytics, services of Google, for us. On Android, outside the
+  European Economic Area, the United Kingdom and Switzerland, from the first start and before you answer the statistics
+  question, the game sends one anonymous "app opened" event and Firebase's own automatic counts (such as first open and
+  session start), without your Player ID or the advertising ID, and with analytics storage denied; none of the game's
+  other events and no crash reports are sent until you answer.
+  Elsewhere, and on iPhone, nothing is sent before you answer.
 </p>
 <ul>
   <li><strong>What is sent:</strong> game events such as a stage started or ended and how it went, coins and
@@ -74,16 +96,18 @@
     many times it has been played); and an installation identifier that Firebase creates for this copy of
     the game. On iPhone, Firebase may also read the identifier for vendor (IDFV), a code Apple gives each
     developer for its own apps on a device; it is not the advertising identifier.</li>
-  <li><strong>On Android:</strong> basic game counts and crash reports are always sent. If you choose
-    "YES, SHARE MORE" (or switch on DETAILED STATISTICS in Settings), detailed statistics are also kept
+  <li><strong>On Android:</strong> basic game counts and crash reports are always sent once you answer. If you choose
+    "YES, COUNT ME IN" (or switch on DETAILED STATISTICS in Settings), detailed statistics are also kept
     for this installation, together with your Player ID, so a deletion request can find them. The same
-    Player ID appears in emails you send us from the game.</li>
-  <li><strong>On iPhone:</strong> nothing is sent unless you answer "YES". If you answer "NO, THANKS", or
+    Player ID appears in emails you send us from the game. Outside the European Economic Area, the United Kingdom and
+    Switzerland, a yes from a player aged 18 or over also lets Google Ads measure our advertising campaigns with these statistics (consent for ad
+    storage and ad user data; never for personalised advertising).</li>
+  <li><strong>On iPhone:</strong> nothing is sent unless you answer "YES, COUNT ME IN". If you answer "NO THANKS", or
     switch STATISTICS off in Settings, no statistics and no crash reports are sent.</li>
   <li><strong>Settings from our side (Remote Config):</strong> the game also uses Firebase Remote Config, from Google,
     so we can change some of its settings without an update (for example, switch a feature off if it breaks) and try
     variants of the game with groups of players. It starts at the same time as the statistics above (on iPhone only
-    if you answer "YES"), uses the same installation identifier, and sends nothing else about you.</li>
+    if you answer "YES, COUNT ME IN"), uses the same installation identifier, and sends nothing else about you.</li>
   <li><strong>How long:</strong> Analytics data about your installation is kept for 14 months; crash
     reports for 90 days. Totals and summary reports that do not identify any player or installation may
     be kept longer.</li>
@@ -99,12 +123,13 @@
   On Android, the game offers optional reward videos (for example, a revive or extra coins). A video is requested only
   for an offer on screen, and plays only when you tap to watch it. The videos are served by Google AdMob, a service of
   Google. Every request asks for <strong>non-personalised</strong> advertising: the advertisements are not chosen from
-  your interests or your activity in other apps, and the content is limited to a PG rating. To serve a video, count
+  your interests or your activity in other apps, and the content is limited to a PG rating (G for a player under 13; see below). To serve a video, count
   it, limit how often the same one is shown and prevent fraud, AdMob receives from your phone your device's IP
   address, the phone's model, system and language, the game's identity, how you interact with the advertisement and,
-  on Android, the advertising ID. Google handles this data under its own policy:
+  on Android, the advertising ID (which Google does not use for a player under 13: see below). Google handles this data under its own policy:
   <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.
-  The game sends AdMob nothing else about you. Players under 13 are not offered videos (see Children).
+  The game sends AdMob nothing else about you. For players under 13, every request is marked as a request for a child:
+  Google does not use the advertising ID, and only ads rated for general audiences (G) are shown (see Children).
   This version of the game on iPhone has no reward videos.
 </p>
 
@@ -196,10 +221,8 @@
 <p>
   If you choose to play TEAM mode, the game connects to Photon, a multiplayer service run by Exit Games GmbH (Germany), to link
   your phone with your friends' phones. While you are in a room, Photon receives your device's IP address and the game data needed
-  to play together: the room code, your hero, its level and your weapon, where you move and shoot, your health and your kills. The other players in
-  the room see your player name, your hero and how it plays. If you have signed in to Google Play Games in the game (Game
-  Center on iPhone), your player name is that account's name; otherwise it is a name the game makes for you once, from
-  letters and two digits. The game sends Photon no email or advertising ID. We use Photon only to
+  to play together: the room code, your player name, your hero, its level and your weapon, where you move and shoot, your health and your kills. The other players in
+  the room see your player name, your hero and how it plays. In a TEAM room (joined with a room code), the other players see your Google Play Games name (Android) or Game Center name (iPhone) if you are signed in to it; otherwise they see a gamer tag the game makes for you. In Quick Match, other players see only a gamer tag the game makes for you. A player under 13 (by the age screen or the store) always gets a made-up name, a new one for every match, and never an account name. The game sends Photon no email or advertising ID. We use Photon only to
   connect the players; Photon handles this data under its own privacy policy:
   <a href="https://www.photonengine.com/privacy">https://www.photonengine.com/privacy</a>. Playing alone does not connect to Photon.
   Game traffic in TEAM and Quick Match is not encrypted.
@@ -242,26 +265,71 @@
   and the sales reports they give every seller.
 </p>
 
+<h2>Your age</h2>
+<p>
+  The game asks your age once, on a neutral screen. Your answer stays only on your device: it is never sent to us, to our
+  service providers or to anyone else, and it is not part of your cloud save. The game uses it on your device only, to
+  limit features: if you are under 13, it sends no statistics, on Android shows only reward videos that are
+  non-personalised and suitable for children, and offers no friend invites; if you are under 18, it turns off
+  advertising measurement. If your app store tells the game you are younger, the younger age applies.
+</p>
+
 <h2>Children</h2>
 <p>
-  The game is meant for players aged 13 and over. It is not directed at children under 13 and is not
-  part of Google Play's Families programme. If the app store tells the game that a player is under 13, the game
-  sends no statistics and no crash reports, offers no reward videos and no INVITE FRIENDS, sets no reminders and does
-  not ask for a store rating.
+  The game is made for a general audience of teens and adults. It is not directed at children under 13 and is not
+  part of Google Play's Families programme; players under 18 may play only with the permission of a parent or legal guardian (see
+  the Terms of Service). If a player's answer on the age screen, or the app store, tells the game that
+  a player is under 13, the game
+  sends no statistics and no crash reports; on Android offers only reward videos that are non-personalised and suitable for
+  children; offers no INVITE FRIENDS; sets no reminders; and does not ask for a store rating.
 </p>
 <p>
   Such a player can still play TEAM and Quick Match. There, Photon receives their device's IP address and the game data
   described under "Team mode and Quick Match" only to connect and run the match; we keep none of it. They can use only
   the fixed phrases, markers and likes built into the game, never free text, and they are shown only by a name the game
   makes, a new random one for every match, in Quick Match and in TEAM alike. On Android, the
-  anonymous sign-in and App Check described above still work for them, only so that a purchase a parent has approved can
+  anonymous sign-in and App Check described above still work for them, only so that a purchase can
   be checked. If you believe a child under 13 has sent us information, write to us and we will delete it.
+</p>
+<p>
+  When the age screen or the app store tells the game that a player is under 13, the game stops statistics at once and
+  deletes the statistics still waiting on the phone to be sent, both the game's own and those Firebase was holding; nothing more is sent. Statistics sent before then are deleted on request (see "Your rights")
+  or at the end of the periods above. From then on, apart from purchase records (see "Purchases"), we collect nothing new about such a player.
+</p>
+<p>
+  For such a player, the identifiers the game still uses (the anonymous sign-in and App Check token, and the connection to
+  Photon) serve only to run the game: to check a purchase, to protect it against fraud, and to connect
+  and run TEAM and Quick Match. We do not use them to contact the player, to build a profile of them or for advertising,
+  and we give them to no one for those purposes: they are never linked to the Player ID, to statistics or to the
+  advertising ID, and the only records we keep of them are the purchase records described above.
+</p>
+<p>
+  <strong>Players under 13.</strong> When the age screen or the app store tells the game that a player is under 13, the
+  game collects no personal information from that player except the persistent identifiers and technical data described
+  here and above, used only to support the internal operations of the game. It sends no statistics and no crash reports, and the game attaches no Player ID, name or advertising ID to any request. On Android, the game still shows that player optional reward videos
+  through Google AdMob. Every video request for that player is marked as a request for a child (Google's child-directed treatment):
+  Google turns off personalised and interest-based ads and remarketing, does not use the device's advertising ID, disables
+  third-party ad measurement, and shows only ads rated suitable for general audiences (G). To deliver such a video, AdMob
+  necessarily receives the device's IP address and basic technical information (device model, operating system, app
+  version, language). Under the U.S. Children's Online Privacy Protection Act, we and Google use these only to support the
+  internal operations of the game: to serve contextual ads (chosen from this app and the moment, not from the player); to
+  limit how often an ad is shown (frequency capping); to detect fraud and invalid traffic and keep the service secure; and
+  to keep the ad service working and measure that it works. They are never used to build a profile of the player, to
+  contact the player, or for behavioural or targeted advertising, and the game itself never stores them. Google acts as
+  our service provider for this purpose.
 </p>
 
 <h2>Your rights</h2>
 <p>
-  You can ask us to delete the statistics kept for your installation: tap DELETE DATA in the game's Settings,
-  which writes the request for you, or write to the address below with the Player ID shown in the game's Settings. Basic counts (Android's BASIC ONLY) carry no Player ID, so
+  Wherever you live, you can ask to see the information we hold about your installation, and ask us to correct it if it is
+  wrong, incomplete or out of date (sections 13 and 14 of Israel's Privacy Protection Law), or to delete it: use CONTACT US
+  in the game's Settings, or write to the address below, with the Player ID shown in the game's Settings. We answer within
+  30 days, and we complete a deletion within 30 days of your request, except for the records described below that we
+  must keep; Google then removes its backup copies on its own schedule.
+</p>
+<p>
+  To ask us to delete the statistics kept for your installation, you can also tap DELETE DATA in the game's Settings,
+  which writes the request for you. Basic counts (sent on Android whatever you answer) carry no Player ID, so
   they cannot be singled out for deletion; they are removed with the retention periods above. Invite records can be
   deleted on request too: include your invite code (YOUR CODE on the INVITE FRIENDS page), because invite records are
   filed by code, not by Player ID. Purchase and refund records are kept for 3 years to prevent fraud, handle refunds and meet
@@ -270,11 +338,15 @@
 
 <h2>Privacy laws in US states</h2>
 <p>
-  We do not sell or share personal information, and we do not use it for targeted advertising: every reward video is
-  requested as non-personalised. If you live in a
+  We do not sell personal information, and we do not use it for targeted advertising: every reward video is
+  requested as non-personalised. If you are 18 or over and agree to statistics, the advertising ID and the game events described above are
+  shared with Google Ads only to measure our advertising campaigns (never to choose the ads you see); you can stop this
+  at any time by switching DETAILED STATISTICS off in Settings. On Android, answering NO THANKS, or switching DETAILED
+  STATISTICS off, is your opt-out of any "sale" or "sharing" of personal information and of targeted advertising, as US state privacy laws
+  use those words. If you live in a
   US state with a privacy law (for example California, Colorado, Connecticut, Virginia, Utah or Texas), you can ask
   us what we hold about your installation, and ask us to correct or delete it: write to the address below with the
-  Player ID shown in the game's Settings. We answer within 45 days. If we turn down a request, you can ask us to
+  Player ID shown in the game's Settings. We answer within 30 days. If we turn down a request, you can ask us to
   look at it again by replying to our answer.
 </p>
 
