@@ -28,6 +28,7 @@
   .plate { background: var(--plate); color: var(--plate-ink); border-radius: 10px; padding: .4rem 1.1rem;
            font: 700 2.2rem/1.2 ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: .18em; user-select: all; }
   button, a.store { font: inherit; font-weight: 700; cursor: pointer; border-radius: 10px; text-decoration: none; text-align: center; }
+  .sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
   .copy { background: transparent; color: var(--accent); border: 1px solid var(--edge); padding: .45rem 1.1rem; }
   a.store { display: block; padding: 1rem 1.25rem; background: var(--accent); color: var(--on-accent); border: 0; }
   a.store small { display: block; font-weight: 400; opacity: .85; font-size: .85rem; }
@@ -51,6 +52,7 @@
     <span class="plate" id="code"></span>
     <span class="label" id="room-line" hidden>Team room <strong id="room"></strong></span>
     <button class="copy" id="copy" type="button">Copy code</button>
+    <span class="sr" id="copy-status" role="status" aria-live="polite"></span>
   </section>
 
   <a class="store" id="play" href="https://play.google.com/store/apps/details?id=com.greenberg.hordefield">
@@ -123,7 +125,8 @@
   var button = document.getElementById('copy');
   function copy() {
     if (!code) return Promise.resolve(false);
-    var done = function () { button.textContent = 'Copied'; return true; };
+    var status = document.getElementById('copy-status');
+    var done = function () { button.textContent = 'Copied'; status.textContent = 'Code copied'; return true; };
     var by_hand = function () {
       var range = document.createRange();
       range.selectNodeContents(document.getElementById('code'));
@@ -131,6 +134,7 @@
       selection.removeAllRanges();
       selection.addRange(range);
       button.textContent = 'Press and hold the code to copy it';
+      status.textContent = 'Press and hold the code to copy it';
       return false;
     };
     if (navigator.clipboard && navigator.clipboard.writeText)
